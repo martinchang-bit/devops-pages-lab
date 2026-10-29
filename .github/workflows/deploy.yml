@@ -2,7 +2,7 @@ name: Deploy GitHub Pages with Smoke Test
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "test/failure-demo"]
   workflow_dispatch:
 
 permissions:
@@ -59,7 +59,8 @@ jobs:
 
       - name: Verify Live Version Matching
         run: |
-          EXPECTED_SHA="${{ github.sha }}"
+          # ⚠️ 這裡故意將預期 SHA 設為無效的假值，用來觸發失敗演練
+          EXPECTED_SHA="INVALID_DUMMY_SHA_12345"
           SITE_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/version.txt"
           
           echo "Fetching version from: $SITE_URL"
