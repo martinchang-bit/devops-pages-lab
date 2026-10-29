@@ -15,5 +15,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: TheDanniCraft/activity-log@v1
         with:
-          GITHUB_USERNAME: YOUR_GITHUB_USERNAME  # 替換為你的 GitHub 帳號
+          GITHUB_USERNAME: martinchang-bit  # 替換為你的 GitHub 帳號
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
